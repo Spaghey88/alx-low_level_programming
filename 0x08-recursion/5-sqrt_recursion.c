@@ -1,39 +1,29 @@
 #include "main.h"
 
 /**
- * _increasevar - increases i to find sqrt
- * @i: starts at 1
- * @n: the number
- * Return: i, i + 1, or -1
+ * sqrt2 - makes possible to evaluate from 1 to n
+ * @a: same number as n
+ * @b: number that iterates from 1 to n
+ *
+ * Return: 1 on success.
+ * On error, -1 is returned
  */
-int _increasevar(int i, int n)
+int sqrt2(int a, int b)
 {
-	if (i < i == n)
-		return (i);
-	if (i < i < n)
-		return (_increasevar(i + 1, n));
-	if (i < i > n)
+	if (b * b == a)
+		return (b);
+	else if (b * b > a)
 		return (-1);
-	return (i);
+	return (sqrt2(a, b + 1));
 }
 /**
- * _sqrt_recursion - finds sqrt
+ * _sqrt_recursion - returns the natural square root of n
  * @n: the number
  *
- * Return: -1, 0, or sqrt
- *
+ * Return: 1 on success
+ * On error, -1 is returned
  */
 int _sqrt_recursion(int n)
 {
-	if (n < 0)
-		return (-1);
-	if (n == 0)
-		return (0);
-	if (n == 1)
-		return (1);
-	else if (n > 1)
-	{
-		return (_increasevar(1, n));
-	}
-return (-1);
+	return (sqrt2(n, 1));
 }
