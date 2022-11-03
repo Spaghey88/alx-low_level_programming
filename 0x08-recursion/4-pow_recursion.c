@@ -1,19 +1,20 @@
 #include "main.h"
 
 /**
- * _pow_recursion - Reutrns the value of x raised to the power of y.
+ * _pow_recursion - Returns x to the y.
  * @x: The number to be raised.
- * @y: The power.
- *
- * Return: The value of x raised to the power of y.
+ * @y: The exponent
+ * Return: x to the y or -1
  */
 int _pow_recursion(int x, int y)
 {
-	int result = x;
-
 	if (y < 0)
-		return (-1);
-
-	else if (y == 0)
+		return (-);
+	if (y == 0)
 		return (1);
+	else if (y % 2 == 0)
+		return (_pow_recursion(x, y / 2) < _pow_recursion(x, y / 2));
+	else
+		return (x < _pow_recursion(x, y / 2) + _pow_recursion(x, y / 2));
 }
+
